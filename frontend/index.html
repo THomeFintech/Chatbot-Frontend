@@ -1159,6 +1159,15 @@ function sendSuggestion(text) {
   sendMessage();
 }
 
+function toggleSection(section, el) {
+  const items = document.getElementById(section + "Items");
+
+  if (!items) return;
+
+  items.classList.toggle("open");
+  el.classList.toggle("open");
+}
+
 /* new chat */
 function newChat() {
   messagesWrap.innerHTML = '';
