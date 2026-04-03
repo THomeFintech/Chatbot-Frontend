@@ -1099,7 +1099,7 @@ function sendMessage() {
 
   addTyping();
 
-  fetch("/chat", {
+  fetch("https://t-home-chatbot.onrender.com/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -1110,8 +1110,7 @@ function sendMessage() {
   .then(data => {
     removeTyping();
 
-    let response = data.response || "No response from server.";
-
+    let response = data.response || "⚠️ Server is waking up... please try again.";
     // highlight
     response = highlightKeywords(response, userInput);
 
